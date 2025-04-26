@@ -32,3 +32,9 @@
   background: #00796b;
 }
 
+:host {
+  background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+}
+
+
+

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { NgParticlesModule } from 'ng-particles';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ProjectsComponent,
     ExperienceComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    NgParticlesModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'] 
@@ -28,6 +30,16 @@ export class AppComponent {
   scrollTo(section: string) {
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }  
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const topButton = document.querySelector('.back-to-top') as HTMLElement;
+    if (window.scrollY > 300) {
+      topButton.style.display = 'flex';
+    } else {
+      topButton.style.display = 'none';
+    }
+  }
 }
 
 

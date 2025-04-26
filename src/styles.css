@@ -1,22 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 :root {
-  --primary-color: #009688;
-  --text-color: #333;
-  --background-color: #ffffff;
-  --link-color: #00796b;
+  --background-color: #0d0d1f;  /* Deep dark navy */
+  --card-color: #16162b;         /* Soft dark for cards */
+  --text-color: #e0e0e0;         /* Very light gray text */
+  --accent-color: #00f7ff;       /* Neon teal blue */
+  --hover-color: #00d1ff;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background: var(--background-color);
   color: var(--text-color);
+  scroll-behavior: smooth;
+  line-height: 1.7;
+  font-size: 18px;
 }
 
-h1, h2, h3 {
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+section {
+  height: 100vh; 
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+
+h1 {
+  font-size: 3.5rem;
   font-weight: 700;
+  color: var(--accent-color);
+}
+
+h2 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 a {
@@ -30,24 +66,45 @@ a:hover {
 }
 
 section {
+  min-height: 100vh;
   padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 
-button {
-  background: var(--primary-color);
-  color: white;
-  padding: 0.75rem 1.5rem;
+#about {
+  background: linear-gradient(135deg, #0d0d1f, #16162b);
+}
+
+#projects {
+  background: linear-gradient(135deg, #16162b, #0d0d1f);
+}
+
+#experience {
+  background: linear-gradient(135deg, #0d0d1f, #1c1c3a);
+}
+
+#contact {
+  background: linear-gradient(135deg, #1c1c3a, #0d0d1f);
+}
+
+button, a.button-style {
+  background: var(--accent-color);
+  color: #0d0d1f;
+  font-weight: 600;
   border: none;
   border-radius: 50px;
+  padding: 0.75rem 2rem;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
-button:hover {
-  background: #00796b;
+button:hover, a.button-style:hover {
+  background: var(--hover-color);
 }
 
 footer {
@@ -56,4 +113,46 @@ footer {
   background: #f5f5f5;
   margin-top: 4rem;
   font-size: 0.9rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; 
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+a, button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+a:hover, button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);
+  border-radius: 50px;
+}
+
+button:hover, a:hover {
+  cursor: url('https://cdn-icons-png.flaticon.com/512/32/32195.png') 16 16, pointer;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+.experience-card:hover, .project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  transition: all 0.3s ease-in-out;
 }
