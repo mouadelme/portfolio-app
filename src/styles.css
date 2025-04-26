@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #009688;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --accent-color: #ffc107;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  h1, h2, h3 {
+    color: var(--primary-color);
+  }
+  
+  section {
+    margin-bottom: 4rem;
+  }
+  
