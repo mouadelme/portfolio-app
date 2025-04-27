@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 :root {
-  --background-color: #0d0d1f;  /* Deep dark navy */
-  --card-color: #16162b;         /* Soft dark for cards */
-  --text-color: #e0e0e0;         /* Very light gray text */
-  --accent-color: #00f7ff;       /* Neon teal blue */
+  --background-color: #0d0d1f;  
+  --card-color: #16162b;        
+  --text-color: #e0e0e0;         
+  --accent-color: #00f7ff;       
   --hover-color: #00d1ff;
 }
 
