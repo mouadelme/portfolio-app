@@ -29,6 +29,16 @@ import { EducationComponent } from './components/education/education.component';
 export class AppComponent {
   title = 'portfolio-app';
 
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
   scrollTo(section: string) {
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }  

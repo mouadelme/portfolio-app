@@ -119,4 +119,61 @@ body {
     font-size: 1.1rem;
     line-height: 1.6;
   }
+
+  .project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .project-card {
+    background: #16162b;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    transition: transform 0.3s, background 0.3s;
+    cursor: pointer; /* Show pointer hand on hover */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-8px);
+    background: rgba(0, 247, 255, 0.1);
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #00f7ff;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #111122;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  
+  
+  
   

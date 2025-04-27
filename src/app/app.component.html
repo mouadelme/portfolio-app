@@ -1,17 +1,19 @@
 <header class="navbar">
   <div class="logo">mouad.</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+  <nav class="nav-links" [class.active]="menuOpen">
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#education" (click)="closeMenu()">Education</a>
+    <a href="#experience" (click)="closeMenu()">Experience</a>
+    <a href="#projects" (click)="closeMenu()">Projects</a>
+    <a href="#skills" (click)="closeMenu()">Skills</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
   </nav>
+  <div class="menu-icon" (click)="toggleMenu()">☰</div>
 </header>
 
 <main>
   <section id="about" class="section-card">
-    <img src="../assets/headshot.png" alt="Mouad Elmellouki" class="profile-pic">
+    <img src="https://i.imgur.com/fzhw8rn.jpeg" alt="Mouad Elmellouki" class="profile-pic">
     <div class="content">
       <h1>Hi, I'm Mouad Elmellouki</h1>
       <p>
@@ -53,6 +55,26 @@
         <p>Led tutorials on computer architecture, assembly language, C, and basic C++.</p>
       </div>
     </div>
+  </section>
+
+  <section id="projects" class="section-card">
+    <h2>Featured Project</h2>
+    <a href="https://cs-4750-project.onrender.com/" target="_blank" class="project-link">
+      <div class="project-card">
+        <h3>Calorie Tracker Web App</h3>
+        <p>
+          A fullstack web application that tracks users' daily nutrition and fitness. 
+          Users can log meals they consumed, track workouts performed, and view a detailed daily summary 
+          including net calories, calories consumed, calories burned, and macronutrient breakdowns.
+        </p>
+        <ul>
+          <li>Frontend: Angular, TypeScript, HTML/CSS</li>
+          <li>Backend: Node.js, Express.js</li>
+          <li>Database: PostgreSQL</li>
+        </ul>
+        <p><strong>Key Features:</strong> Real-time calorie tracking, user authentication, daily reports, clean modern UI/UX</p>
+      </div>
+    </a>
   </section>
 
   <section id="skills" class="section-card">
