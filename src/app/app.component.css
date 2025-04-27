@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0d0d1f;
+    color: #e0e0e0;
+    scroll-behavior: smooth;
+  }
+
+  main {
+    margin-top: 6rem;
+    padding: 0 1rem;
+  }
+  
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(13, 13, 31, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #00f7ff;
+  }
+  
+  nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #00f7ff;
+  }
+  
+  .section-card {
+    background: #111122;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin: 2rem auto;
+    max-width: 1000px;
+    width: 90%;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .skills-grid div, .experience-card {
+    background: #16162b;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+  }
+  
+  .skills-grid div:hover, .experience-card:hover {
+    transform: translateY(-8px);
+    background: rgba(0, 247, 255, 0.2);
+  }
+  
+  .profile-pic {
+    max-width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 2rem auto 0;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0d0d1f;
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #00f7ff;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  p, li, a {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
