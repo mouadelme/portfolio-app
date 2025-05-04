@@ -91,6 +91,15 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "./"
               }
             ],
             "styles": [
