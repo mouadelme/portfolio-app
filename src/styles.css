@@ -1,8 +1,8 @@
 :root {
-  --background-color: #0d0d1f;  
-  --card-color: #16162b;        
-  --text-color: #e0e0e0;         
-  --accent-color: #00f7ff;       
+  --background-color: #0d0d1f;
+  --card-color: #16162b;
+  --text-color: #e0e0e0;
+  --accent-color: #00f7ff;
   --hover-color: #00d1ff;
 }
 
@@ -24,7 +24,7 @@ html, body {
 }
 
 section {
-  height: 100vh; 
+  height: 100vh;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,6 @@ section {
   margin: auto;
   min-height: 100vh;
 }
-
 
 h1 {
   font-size: 3.5rem;
@@ -46,6 +45,9 @@ h2 {
   font-size: 2.8rem;
   font-weight: 600;
   color: var(--accent-color);
+  border-bottom: 3px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 0.5rem;
 }
 
 h3 {
@@ -54,22 +56,20 @@ h3 {
 }
 
 a {
-  color: var(--link-color);
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.3s;
 }
 
-a:hover {
-  color: var(--primary-color);
+nav a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-left: 2rem;
 }
 
-section {
-  min-height: 100vh;
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
+a:hover, nav a:hover {
+  color: var(--hover-color);
 }
 
 #about {
@@ -108,16 +108,17 @@ button:hover, a.button-style:hover {
 footer {
   text-align: center;
   padding: 2rem;
-  background: #f5f5f5;
-  margin-top: 4rem;
+  background: #0d0d1f;
+  color: #888;
   font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
 .back-to-top {
   position: fixed;
   bottom: 30px;
   left: 30px;
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   color: white;
   border: none;
   border-radius: 50%;
@@ -125,32 +126,170 @@ footer {
   height: 50px;
   font-size: 1.5rem;
   cursor: pointer;
-  display: none; 
+  display: none;
   z-index: 999;
   align-items: center;
   justify-content: center;
 }
 
-a, button {
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skills-grid div,
+.experience-card,
+.project-card,
+.section-card {
+  background: var(--card-color);
+  color: var(--text-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skills-grid div:hover,
+.experience-card:hover,
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(0, 247, 255, 0.1);
+}
+
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card-color);
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: var(--accent-color);
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-a:hover, button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);
-  border-radius: 50px;
-}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111122;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
 
-button:hover, a:hover {
-  cursor: url('https://cdn-icons-png.flaticon.com/512/32/32195.png') 16 16, pointer;
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
 }
 
 * {
   transition: all 0.3s ease-in-out;
 }
 
-.experience-card:hover, .project-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  transition: all 0.3s ease-in-out;
+/* =========================
+   Light Mode Overrides
+   ========================= */
+body.lightmode {
+  --background-color: #ffffff;
+  --card-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #00aaff;
+  --hover-color: #0088cc;
+}
+
+html.lightmode, body.lightmode {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body.lightmode header.navbar {
+  background-color: #f0f2f5;
+  color: var(--text-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.lightmode .logo,
+body.lightmode nav a,
+body.lightmode .menu-icon {
+  color: var(--accent-color);
+  opacity: 1;
+  text-shadow: none;
+}
+
+body.lightmode nav a:hover {
+  color: var(--hover-color);
+}
+
+body.lightmode h1,
+body.lightmode h2,
+body.lightmode h3 {
+  color: var(--accent-color);
+}
+
+body.lightmode h2 {
+  border-bottom: 3px solid var(--accent-color);
+}
+
+body.lightmode .section-card,
+body.lightmode .project-card,
+body.lightmode .experience-card,
+body.lightmode .skills-grid div {
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.lightmode .experience-card:hover,
+body.lightmode .project-card:hover,
+body.lightmode .skills-grid div:hover {
+  background-color: #f0faff;
+}
+
+body.lightmode #about {
+  background: linear-gradient(135deg, #ffffff, #e8e9ed);
+}
+
+body.lightmode #experience {
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+}
+
+body.lightmode #projects {
+  background: linear-gradient(135deg, #f0f0f0, #e8e9ed);
+}
+
+body.lightmode #contact {
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+}
+
+body.lightmode footer {
+  background: #f5f5f5;
+  color: #555;
 }
